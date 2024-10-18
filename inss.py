@@ -1,11 +1,10 @@
-
 nlista=[]
 slista=[]
 horalista=[]
 while True:
     nome=input("digite um nome:")
     nlista.append(nome)
-    salário= int(input("digite seu salário:"))
+    salário= float(input("digite seu salário:"))
     slista.append(salário)
     horas=float(input("digite quantas horas esse funcionario trabalha?:"))
     horalista.append(horas)
@@ -14,9 +13,8 @@ while True:
     if dec == "s":
         print("RENICIANDO")
     elif dec == "n":
-        print("teste")
+        print("+-_*"*15)
         break
-print("=================="*10)
 dec1=input("deseja visualizar o Salário, nome e INSS do funcionário? S/N:")
 dec1=dec1.lower()
 if dec1 == "s":
@@ -31,4 +29,14 @@ elif salário > 2666 and salário < 4000:
 elif salário > 4000:
     inss=(salário*14)/100
 total=salário-inss
-print("O funcionário: {}, com o id {},tem o salário: {}, por hora ganha: {}, de inss será pago {}, totalizando:".format(nlista[dec2],dec2+1, slista[dec2], valorhr, inss, total))
+print("O funcionário: {}, com o id {},tem o salário: {}, por hora ganha: {:.2}, de inss será pago {}, totalizando:{}".format(nlista[dec2],dec2+1, slista[dec2], valorhr, inss, total))
+print("+-_*"*15)
+print ("o maior salário é  {}".format(max(slista)))
+print ("o menor salário é {}".format(min(slista)))
+med= sum(slista) / len(slista)
+soma= sum(slista)
+ler= len(slista)
+print("existem {} funcionários na empresa.".format(ler))
+print("A soma salarial é {}".format(soma))
+print("A média salarial é {}".format(med))
+
